@@ -1,0 +1,26 @@
+Algoritmo RotinaMatinal
+
+// Definindo as constantes
+horasNecessariasDeSono <- 8 // Número de horas de sono recomendadas
+tempoParaLevantar <- 30 // Tempo em minutos para se preparar após acordar
+
+// Obtendo a hora atual
+horaAtual <- ObterHoraAtual()
+
+// Calculando o horário de acordar
+horaDeAcordar <- horaAtual + horasNecessariasDeSono
+
+// Calculando o horário de levantar
+horaDeLevantar <- horaDeAcordar - tempoParaLevantar
+
+// Exibindo a mensagem
+
+Escreva("Acorde e levante-se até as ", horaDeLevantar, " horas.")
+Escreva("Vá até o banheiro em ", horaDeLevantar + tempoParaIrAoBanheiro, " horas.")
+Escreva("Pegue a escova de dentes em ", horaDeLevantar + tempoParaIrAoBanheiro + tempoParaPegarEscova, " horas.")
+Escreva("Aplique a pasta de dentes em ", horaDeLevantar + tempoParaIrAoBanheiro + tempoParaPegarEscova + tempoParaAplicarPasta, " horas.")
+Escreva("Escove os dentes em ", horaDeLevantar + tempoParaIrAoBanheiro + tempoParaPegarEscova + tempoParaAplicarPasta + tempoParaEscovarDentes, " horas.")
+Escreva("Tome café da manhã em ", horaDeLevantar + tempoParaIrAoBanheiro + tempoParaPegarEscova + tempoParaAplicarPasta + tempoParaEscovarDentes + tempoParaTomarCafe, " horas.")
+Escreva("Continue com suas atividades matinais conforme necessário.")
+
+FimAlgoritmo
