@@ -22,7 +22,7 @@ public class FlowControl {
      System.out.println("Informe a quarta nota: ");
      grade4 = keyboard.nextInt();
 
-     // Logic / Output
+     // Logic & Output
 
      result = (grade1 + grade2 + grade3 + grade4) / 4;
 
