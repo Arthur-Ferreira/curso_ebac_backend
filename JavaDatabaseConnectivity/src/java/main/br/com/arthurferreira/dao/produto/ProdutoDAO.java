@@ -1,6 +1,3 @@
-/**
- * 
- */
 package br.com.arthurferreira.dao;
 
 import java.sql.Connection;
@@ -8,13 +5,13 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
 import br.com.arthurferreira.dao.jdbc.ConnectionFactory;
-import br.com.arthurferreira.domain.Cliente;
+import br.com.arthurferreira.domain.Produto;
 
 /**
  * @author arthur.ferreira
  *
  */
-public class ClienteDAO implements IClienteDAO {
+public class ProdutoDAO implements IProdutoDAO {
 
 	@Override
 	public Integer cadastrar(Cliente cliente) throws Exception {
