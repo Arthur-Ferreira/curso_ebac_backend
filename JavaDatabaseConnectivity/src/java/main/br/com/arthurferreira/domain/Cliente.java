@@ -1,15 +1,13 @@
-package br.com.arthurferreira.domain;
+package JavaDatabaseConnectivity.src.java.main.br.com.arthurferreira.domain;
 
 /**
  * @author arthur.ferreira
- *
  */
+
 public class Cliente {
 
 	private Long id;
-	
 	private String codigo;
-	
 	private String nome;
 
 	public Long getId() {
@@ -35,6 +33,4 @@ public class Cliente {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	
-	
 }

@@ -1,4 +1,4 @@
-package br.com.arthurferreira.domain;
+package JavaDatabaseConnectivity.src.java.main.br.com.arthurferreira.domain;
 
 /**
  * @author arthur.ferreira
@@ -11,6 +11,10 @@ public class Produto {
   private String codigo;
 
   private String nome;
+
+  private String descricao;
+
+  private Float preco;
 
   public Long getId() {
     return id;
@@ -36,5 +40,19 @@ public class Produto {
     this.nome = nome;
   }
 
+  public String getDescricao() {
+    return descricao;
+  }
 
+  public void setDescricao(String descricao) {
+    this.descricao = descricao;
+  }
+
+  public Float getPreco() {
+    return preco;
+  }
+
+  public void setPreco(Float preco) {
+    this.preco = preco;
+  }
 }
