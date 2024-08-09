@@ -18,21 +18,21 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import br.com.arthurferreira.dao.VendaExclusaoJpaDAO;
-import br.com.arthurferreira.dao.jpa.ClienteJpaDAO;
-import br.com.arthurferreira.dao.jpa.IClienteJpaDAO;
-import br.com.arthurferreira.dao.jpa.IProdutoJpaDAO;
-import br.com.arthurferreira.dao.jpa.IVendaJpaDAO;
-import br.com.arthurferreira.dao.jpa.ProdutoJpaDAO;
-import br.com.arthurferreira.dao.jpa.VendaJpaDAO;
-import br.com.arthurferreira.domain.jpa.ClienteJpa;
-import br.com.arthurferreira.domain.jpa.ProdutoJpa;
-import br.com.arthurferreira.domain.jpa.VendaJpa;
-import br.com.arthurferreira.domain.jpa.VendaJpa.Status;
-import br.com.arthurferreira.exceptions.DAOException;
-import br.com.arthurferreira.exceptions.MaisDeUmRegistroException;
-import br.com.arthurferreira.exceptions.TableException;
-import br.com.arthurferreira.exceptions.TipoChaveNaoEncontradaException;
+import main.java.br.com.arthurferreira.dao.jpa.ClienteJpaDAO;
+import main.java.br.com.arthurferreira.dao.jpa.IClienteJpaDAO;
+import main.java.br.com.arthurferreira.dao.jpa.IProdutoJpaDAO;
+import main.java.br.com.arthurferreira.dao.jpa.IVendaJpaDAO;
+import main.java.br.com.arthurferreira.dao.jpa.ProdutoJpaDAO;
+import main.java.br.com.arthurferreira.dao.jpa.VendaJpaDAO;
+import main.java.br.com.arthurferreira.domain.jpa.ClienteJpa;
+import main.java.br.com.arthurferreira.domain.jpa.ProdutoJpa;
+import main.java.br.com.arthurferreira.domain.jpa.VendaJpa;
+import main.java.br.com.arthurferreira.domain.jpa.VendaJpa.Status;
+import main.java.br.com.arthurferreira.exceptions.DAOException;
+import main.java.br.com.arthurferreira.exceptions.MaisDeUmRegistroException;
+import main.java.br.com.arthurferreira.exceptions.TableException;
+import main.java.br.com.arthurferreira.exceptions.TipoChaveNaoEncontradaException;
+import test.java.br.com.arthurferreira.dao.VendaExclusaoJpaDAO;
 
 /**
  * @author arthur.ferreira
@@ -117,7 +117,7 @@ public class VendaJpaDAOTest {
 	}
 	
 	@Test
-	public void adicionarMaisProdutosDoMesmo() throws TipoChaveNaoEncontradaException, MaisDeUmRegistroException, TableException, DAOException {
+	public void adicionarMaiRSrodutosDoMesmo() throws TipoChaveNaoEncontradaException, MaisDeUmRegistroException, TableException, DAOException {
 		String codigoVenda = "A4";
 		VendaJpa venda = criarVenda(codigoVenda);
 		VendaJpa retorno = vendaDao.cadastrar(venda);
@@ -135,7 +135,7 @@ public class VendaJpaDAOTest {
 	} 
 	
 	@Test
-	public void adicionarMaisProdutosDiferentes() throws TipoChaveNaoEncontradaException, MaisDeUmRegistroException, TableException, DAOException {
+	public void adicionarMaiRSrodutosDiferentes() throws TipoChaveNaoEncontradaException, MaisDeUmRegistroException, TableException, DAOException {
 		String codigoVenda = "A5";
 		VendaJpa venda = criarVenda(codigoVenda);
 		VendaJpa retorno = vendaDao.cadastrar(venda);
@@ -225,7 +225,7 @@ public class VendaJpaDAOTest {
 	} 
 	
 	@Test
-	public void removerTodosProdutos() throws TipoChaveNaoEncontradaException, MaisDeUmRegistroException, TableException, DAOException {
+	public void removerTodoRSrodutos() throws TipoChaveNaoEncontradaException, MaisDeUmRegistroException, TableException, DAOException {
 		String codigoVenda = "A9";
 		VendaJpa venda = criarVenda(codigoVenda);
 		VendaJpa retorno = vendaDao.cadastrar(venda);
@@ -244,7 +244,7 @@ public class VendaJpaDAOTest {
 		assertTrue(vendaConsultada.getValorTotal().equals(valorTotal));
 		
 		
-		vendaConsultada.removerTodosProdutos();
+		vendaConsultada.removerTodoRSrodutos();
 		assertTrue(vendaConsultada.getQuantidadeTotalProdutos() == 0);
 		assertTrue(vendaConsultada.getValorTotal().equals(BigDecimal.valueOf(0)));
 		assertTrue(vendaConsultada.getStatus().equals(Status.INICIADA));
@@ -325,10 +325,10 @@ public class VendaJpaDAOTest {
 	private ClienteJpa cadastrarCliente() throws TipoChaveNaoEncontradaException, DAOException {
 		ClienteJpa cliente = new ClienteJpa();
 		cliente.setCpf(rd.nextLong());
-		cliente.setNome("Rodrigo");
-		cliente.setCidade("São Paulo");
+		cliente.setNome("Arthur");
+		cliente.setCidade("Porto Alegre");
 		cliente.setEnd("End");
-		cliente.setEstado("SP");
+		cliente.setEstado("RS");
 		cliente.setNumero(10);
 		cliente.setTel(1199999999L);
 		clienteDao.cadastrar(cliente);

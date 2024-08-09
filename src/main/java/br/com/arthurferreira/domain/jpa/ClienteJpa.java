@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package main.java.br.com.arthurferreira.domain.jpa;
 
@@ -11,7 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
-import br.com.arthurferreira.dao.Persistente;
+import main.java.br.com.arthurferreira.dao.Persistente;
 
 /**
  * @author arthur.ferreira
@@ -20,33 +20,33 @@ import br.com.arthurferreira.dao.Persistente;
 @Entity
 @Table(name = "TB_CLIENTE")
 public class ClienteJpa implements Persistente {
-	
+
 	@Id
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="cliente_seq")
 	@SequenceGenerator(name="cliente_seq", sequenceName="sq_cliente", initialValue = 1, allocationSize = 1)
 	private Long id;
-	
+
 	@Column(name = "NOME", nullable = false, length = 50)
 	private String nome;
-	
+
 	@Column(name = "CPF", nullable = false, unique = true)
     private Long cpf;
-    
+
 	@Column(name = "TEL", nullable = false)
     private Long tel;
-    
+
 	@Column(name = "ENDERECO", nullable = false, length = 100)
     private String end;
-    
+
 	@Column(name = "NUMERO", nullable = false)
     private Integer numero;
-    
+
 	@Column(name = "CIDADE", nullable = false, length = 100)
     private String cidade;
-    
+
 	@Column(name = "ESTADO", nullable = false, length = 50)
     private String estado;
-    
+
 	public String getNome() {
 		return nome;
 	}
@@ -95,9 +95,4 @@ public class ClienteJpa implements Persistente {
 	public void setId(Long id) {
 		this.id = id;
 	}
-	
-	
-
-	
-
 }

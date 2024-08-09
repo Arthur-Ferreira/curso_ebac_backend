@@ -8,12 +8,12 @@ import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 
-import br.com.arthurferreira.dao.generic.jpa.GenericJpaDAO;
-import br.com.arthurferreira.domain.jpa.ClienteJpa;
-import br.com.arthurferreira.domain.jpa.ProdutoJpa;
-import br.com.arthurferreira.domain.jpa.VendaJpa;
-import br.com.arthurferreira.exceptions.DAOException;
-import br.com.arthurferreira.exceptions.TipoChaveNaoEncontradaException;
+import main.java.br.com.arthurferreira.dao.generic.jpa.GenericJpaDAO;
+import main.java.br.com.arthurferreira.domain.jpa.ClienteJpa;
+import main.java.br.com.arthurferreira.domain.jpa.ProdutoJpa;
+import main.java.br.com.arthurferreira.domain.jpa.VendaJpa;
+import main.java.br.com.arthurferreira.exceptions.DAOException;
+import main.java.br.com.arthurferreira.exceptions.TipoChaveNaoEncontradaException;
 
 /**
  * @author arthur.ferreira

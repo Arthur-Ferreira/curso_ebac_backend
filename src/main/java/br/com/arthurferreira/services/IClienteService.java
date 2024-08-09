@@ -3,9 +3,9 @@
  */
 package main.java.br.com.arthurferreira.services;
 
-import br.com.arthurferreira.domain.Cliente;
-import br.com.arthurferreira.exceptions.DAOException;
-import br.com.arthurferreira.services.generic.IGenericService;
+import main.java.br.com.arthurferreira.domain.Cliente;
+import main.java.br.com.arthurferreira.exceptions.DAOException;
+import main.java.br.com.arthurferreira.services.generic.IGenericService;
 
 /**
  * @author arthur.ferreira

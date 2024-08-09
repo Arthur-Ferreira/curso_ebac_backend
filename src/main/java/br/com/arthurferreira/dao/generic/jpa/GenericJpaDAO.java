@@ -11,11 +11,11 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
-import br.com.arthurferreira.dao.Persistente;
-import br.com.arthurferreira.exceptions.DAOException;
-import br.com.arthurferreira.exceptions.MaisDeUmRegistroException;
-import br.com.arthurferreira.exceptions.TableException;
-import br.com.arthurferreira.exceptions.TipoChaveNaoEncontradaException;
+import main.java.br.com.arthurferreira.dao.Persistente;
+import main.java.br.com.arthurferreira.exceptions.DAOException;
+import main.java.br.com.arthurferreira.exceptions.MaisDeUmRegistroException;
+import main.java.br.com.arthurferreira.exceptions.TableException;
+import main.java.br.com.arthurferreira.exceptions.TipoChaveNaoEncontradaException;
 
 /**
  * @author arthur.ferreira
@@ -80,7 +80,7 @@ public class GenericJpaDAO <T extends Persistente, E extends Serializable> imple
 	
 	protected void openConnection() {
 		entityManagerFactory = 
-				Persistence.createEntityManagerFactory("ExemploJPA");
+				Persistence.createEntityManagerFactory("Projeto4");
 		entityManager = entityManagerFactory.createEntityManager();
 		entityManager.getTransaction().begin();
 	}

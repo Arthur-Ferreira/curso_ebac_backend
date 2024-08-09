@@ -11,13 +11,13 @@ import org.junit.After;
 import org.junit.Assert;
 import org.junit.Test;
 
-import br.com.arthurferreira.dao.ClienteDAO;
-import br.com.arthurferreira.dao.IClienteDAO;
-import br.com.arthurferreira.domain.Cliente;
-import br.com.arthurferreira.exceptions.DAOException;
-import br.com.arthurferreira.exceptions.MaisDeUmRegistroException;
-import br.com.arthurferreira.exceptions.TableException;
-import br.com.arthurferreira.exceptions.TipoChaveNaoEncontradaException;
+import main.java.br.com.arthurferreira.dao.ClienteDAO;
+import main.java.br.com.arthurferreira.dao.IClienteDAO;
+import main.java.br.com.arthurferreira.domain.Cliente;
+import main.java.br.com.arthurferreira.exceptions.DAOException;
+import main.java.br.com.arthurferreira.exceptions.MaisDeUmRegistroException;
+import main.java.br.com.arthurferreira.exceptions.TableException;
+import main.java.br.com.arthurferreira.exceptions.TipoChaveNaoEncontradaException;
 
 /**
  * @author arthur.ferreira
@@ -48,10 +48,10 @@ public class ClienteDAOTest {
 	public void pesquisarCliente() throws MaisDeUmRegistroException, TableException, TipoChaveNaoEncontradaException, DAOException {
 		Cliente cliente = new Cliente();
 		cliente.setCpf(12312312312L);
-		cliente.setNome("Rodrigo");
-		cliente.setCidade("São Paulo");
+		cliente.setNome("Arthur");
+		cliente.setCidade("Porto Alegre");
 		cliente.setEnd("End");
-		cliente.setEstado("SP");
+		cliente.setEstado("RS");
 		cliente.setNumero(10);
 		cliente.setTel(1199999999L);
 		clienteDao.cadastrar(cliente);
@@ -66,10 +66,10 @@ public class ClienteDAOTest {
 	public void salvarCliente() throws TipoChaveNaoEncontradaException, MaisDeUmRegistroException, TableException, DAOException {
 		Cliente cliente = new Cliente();
 		cliente.setCpf(56565656565L);
-		cliente.setNome("Rodrigo");
-		cliente.setCidade("São Paulo");
+		cliente.setNome("Arthur");
+		cliente.setCidade("Porto Alegre");
 		cliente.setEnd("End");
-		cliente.setEstado("SP");
+		cliente.setEstado("RS");
 		cliente.setNumero(10);
 		cliente.setTel(1199999999L);
 		Boolean retorno = clienteDao.cadastrar(cliente);
@@ -86,10 +86,10 @@ public class ClienteDAOTest {
 	public void excluirCliente() throws TipoChaveNaoEncontradaException, MaisDeUmRegistroException, TableException, DAOException {
 		Cliente cliente = new Cliente();
 		cliente.setCpf(56565656565L);
-		cliente.setNome("Rodrigo");
-		cliente.setCidade("São Paulo");
+		cliente.setNome("Arthur");
+		cliente.setCidade("Porto Alegre");
 		cliente.setEnd("End");
-		cliente.setEstado("SP");
+		cliente.setEstado("RS");
 		cliente.setNumero(10);
 		cliente.setTel(1199999999L);
 		Boolean retorno = clienteDao.cadastrar(cliente);
@@ -106,25 +106,25 @@ public class ClienteDAOTest {
 	@Test
 	public void alterarCliente() throws TipoChaveNaoEncontradaException, MaisDeUmRegistroException, TableException, DAOException {
 		Cliente cliente = new Cliente();
+		cliente.setNome("Arthur");
 		cliente.setCpf(56565656565L);
-		cliente.setNome("Rodrigo");
-		cliente.setCidade("São Paulo");
-		cliente.setEnd("End");
-		cliente.setEstado("SP");
-		cliente.setNumero(10);
 		cliente.setTel(1199999999L);
+		cliente.setEnd("End");
+		cliente.setNumero(10);
+		cliente.setCidade("Porto Alegre");
+		cliente.setEstado("RS");
 		Boolean retorno = clienteDao.cadastrar(cliente);
 		Assert.assertTrue(retorno);
 		
 		Cliente clienteConsultado = clienteDao.consultar(cliente.getCpf());
 		Assert.assertNotNull(clienteConsultado);
 		
-		clienteConsultado.setNome("Rodrigo Pires");
+		clienteConsultado.setNome("Arthur Ferreira");
 		clienteDao.alterar(clienteConsultado);
 		
 		Cliente clienteAlterado = clienteDao.consultar(clienteConsultado.getCpf());
 		Assert.assertNotNull(clienteAlterado);
-		Assert.assertEquals("Rodrigo Pires", clienteAlterado.getNome());
+		Assert.assertEquals("Arthur Ferreira", clienteAlterado.getNome());
 		
 		clienteDao.excluir(cliente.getCpf());
 		clienteConsultado = clienteDao.consultar(cliente.getCpf());
@@ -135,10 +135,10 @@ public class ClienteDAOTest {
 	public void buscarTodos() throws TipoChaveNaoEncontradaException, DAOException {
 		Cliente cliente = new Cliente();
 		cliente.setCpf(56565656565L);
-		cliente.setNome("Rodrigo");
-		cliente.setCidade("São Paulo");
+		cliente.setNome("Arthur");
+		cliente.setCidade("Porto Alegre");
 		cliente.setEnd("End");
-		cliente.setEstado("SP");
+		cliente.setEstado("RS");
 		cliente.setNumero(10);
 		cliente.setTel(1199999999L);
 		Boolean retorno = clienteDao.cadastrar(cliente);
@@ -146,10 +146,10 @@ public class ClienteDAOTest {
 		
 		Cliente cliente1 = new Cliente();
 		cliente1.setCpf(56565656569L);
-		cliente1.setNome("Rodrigo");
-		cliente1.setCidade("São Paulo");
+		cliente1.setNome("Arthur");
+		cliente1.setCidade("Porto Alegre");
 		cliente1.setEnd("End");
-		cliente1.setEstado("SP");
+		cliente1.setEstado("RS");
 		cliente1.setNumero(10);
 		cliente1.setTel(1199999999L);
 		Boolean retorno1 = clienteDao.cadastrar(cliente1);

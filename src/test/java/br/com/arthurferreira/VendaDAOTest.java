@@ -21,21 +21,21 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import br.com.arthurferreira.dao.ClienteDAO;
-import br.com.arthurferreira.dao.IClienteDAO;
-import br.com.arthurferreira.dao.IProdutoDAO;
-import br.com.arthurferreira.dao.IVendaDAO;
-import br.com.arthurferreira.dao.ProdutoDAO;
-import br.com.arthurferreira.dao.VendaDAO;
-import br.com.arthurferreira.dao.generic.jdbc.ConnectionFactory;
-import br.com.arthurferreira.domain.Cliente;
-import br.com.arthurferreira.domain.Produto;
-import br.com.arthurferreira.domain.Venda;
-import br.com.arthurferreira.domain.Venda.Status;
-import br.com.arthurferreira.exceptions.DAOException;
-import br.com.arthurferreira.exceptions.MaisDeUmRegistroException;
-import br.com.arthurferreira.exceptions.TableException;
-import br.com.arthurferreira.exceptions.TipoChaveNaoEncontradaException;
+import main.java.br.com.arthurferreira.dao.ClienteDAO;
+import main.java.br.com.arthurferreira.dao.IClienteDAO;
+import main.java.br.com.arthurferreira.dao.IProdutoDAO;
+import main.java.br.com.arthurferreira.dao.IVendaDAO;
+import main.java.br.com.arthurferreira.dao.ProdutoDAO;
+import main.java.br.com.arthurferreira.dao.VendaDAO;
+import main.java.br.com.arthurferreira.dao.generic.jdbc.ConnectionFactory;
+import main.java.br.com.arthurferreira.domain.Cliente;
+import main.java.br.com.arthurferreira.domain.Produto;
+import main.java.br.com.arthurferreira.domain.Venda;
+import main.java.br.com.arthurferreira.domain.Venda.Status;
+import main.java.br.com.arthurferreira.exceptions.DAOException;
+import main.java.br.com.arthurferreira.exceptions.MaisDeUmRegistroException;
+import main.java.br.com.arthurferreira.exceptions.TableException;
+import main.java.br.com.arthurferreira.exceptions.TipoChaveNaoEncontradaException;
 
 /**
  * @author arthur.ferreira
@@ -122,7 +122,7 @@ public class VendaDAOTest {
 	}
 	
 	@Test
-	public void adicionarMaisProdutosDoMesmo() throws TipoChaveNaoEncontradaException, MaisDeUmRegistroException, TableException, DAOException {
+	public void adicionarMaiRSrodutosDoMesmo() throws TipoChaveNaoEncontradaException, MaisDeUmRegistroException, TableException, DAOException {
 		String codigoVenda = "A4";
 		Venda venda = criarVenda(codigoVenda);
 		Boolean retorno = vendaDao.cadastrar(venda);
@@ -140,7 +140,7 @@ public class VendaDAOTest {
 	} 
 	
 	@Test
-	public void adicionarMaisProdutosDiferentes() throws TipoChaveNaoEncontradaException, MaisDeUmRegistroException, TableException, DAOException {
+	public void adicionarMaiRSrodutosDiferentes() throws TipoChaveNaoEncontradaException, MaisDeUmRegistroException, TableException, DAOException {
 		String codigoVenda = "A5";
 		Venda venda = criarVenda(codigoVenda);
 		Boolean retorno = vendaDao.cadastrar(venda);
@@ -227,7 +227,7 @@ public class VendaDAOTest {
 	} 
 	
 	@Test
-	public void removerTodosProdutos() throws TipoChaveNaoEncontradaException, MaisDeUmRegistroException, TableException, DAOException {
+	public void removerTodoRSrodutos() throws TipoChaveNaoEncontradaException, MaisDeUmRegistroException, TableException, DAOException {
 		String codigoVenda = "A9";
 		Venda venda = criarVenda(codigoVenda);
 		Boolean retorno = vendaDao.cadastrar(venda);
@@ -246,7 +246,7 @@ public class VendaDAOTest {
 		assertTrue(vendaConsultada.getValorTotal().equals(valorTotal));
 		
 		
-		vendaConsultada.removerTodosProdutos();
+		vendaConsultada.removerTodoRSrodutos();
 		assertTrue(vendaConsultada.getQuantidadeTotalProdutos() == 0);
 		assertTrue(vendaConsultada.getValorTotal().equals(BigDecimal.valueOf(0)));
 		assertTrue(vendaConsultada.getStatus().equals(Status.INICIADA));
@@ -299,10 +299,10 @@ public class VendaDAOTest {
 	private Cliente cadastrarCliente() throws TipoChaveNaoEncontradaException, DAOException {
 		Cliente cliente = new Cliente();
 		cliente.setCpf(12312312312L);
-		cliente.setNome("Rodrigo");
-		cliente.setCidade("São Paulo");
+		cliente.setNome("Arthur");
+		cliente.setCidade("Porto Alegre");
 		cliente.setEnd("End");
-		cliente.setEstado("SP");
+		cliente.setEstado("RS");
 		cliente.setNumero(10);
 		cliente.setTel(1199999999L);
 		clienteDao.cadastrar(cliente);

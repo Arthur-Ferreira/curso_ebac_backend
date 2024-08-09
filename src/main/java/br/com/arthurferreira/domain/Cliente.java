@@ -3,10 +3,10 @@
  */
 package main.java.br.com.arthurferreira.domain;
 
-import anotacao.ColunaTabela;
-import anotacao.Tabela;
-import anotacao.TipoChave;
-import br.com.arthurferreira.dao.Persistente;
+import main.java.anotacao.ColunaTabela;
+import main.java.anotacao.Tabela;
+import main.java.anotacao.TipoChave;
+import main.java.br.com.arthurferreira.dao.Persistente;
 
 /**
  * @author arthur.ferreira

@@ -6,11 +6,11 @@ package main.java.br.com.arthurferreira.dao.generic.jpa;
 import java.io.Serializable;
 import java.util.Collection;
 
-import br.com.arthurferreira.dao.Persistente;
-import br.com.arthurferreira.exceptions.DAOException;
-import br.com.arthurferreira.exceptions.MaisDeUmRegistroException;
-import br.com.arthurferreira.exceptions.TableException;
-import br.com.arthurferreira.exceptions.TipoChaveNaoEncontradaException;
+import main.java.br.com.arthurferreira.dao.Persistente;
+import main.java.br.com.arthurferreira.exceptions.DAOException;
+import main.java.br.com.arthurferreira.exceptions.MaisDeUmRegistroException;
+import main.java.br.com.arthurferreira.exceptions.TableException;
+import main.java.br.com.arthurferreira.exceptions.TipoChaveNaoEncontradaException;
 
 /**
  * @author arthur.ferreira

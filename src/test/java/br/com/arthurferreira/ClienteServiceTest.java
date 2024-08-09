@@ -7,13 +7,13 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import br.com.arthurferreira.dao.ClienteDaoMock;
-import br.com.arthurferreira.dao.IClienteDAO;
-import br.com.arthurferreira.domain.Cliente;
-import br.com.arthurferreira.exceptions.DAOException;
-import br.com.arthurferreira.exceptions.TipoChaveNaoEncontradaException;
-import br.com.arthurferreira.services.ClienteService;
-import br.com.arthurferreira.services.IClienteService;
+import test.java.br.com.arthurferreira.dao.ClienteDaoMock;
+import main.java.br.com.arthurferreira.dao.IClienteDAO;
+import main.java.br.com.arthurferreira.domain.Cliente;
+import main.java.br.com.arthurferreira.exceptions.DAOException;
+import main.java.br.com.arthurferreira.exceptions.TipoChaveNaoEncontradaException;
+import main.java.br.com.arthurferreira.services.ClienteService;
+import main.java.br.com.arthurferreira.services.IClienteService;
 
 /**
  * @author arthur.ferreira
@@ -34,10 +34,10 @@ public class ClienteServiceTest {
 	public void init() {
 		cliente = new Cliente();
 		cliente.setCpf(12312312312L);
-		cliente.setNome("Rodrigo");
-		cliente.setCidade("São Paulo");
+		cliente.setNome("Arthur");
+		cliente.setCidade("Porto Alegre");
 		cliente.setEnd("End");
-		cliente.setEstado("SP");
+		cliente.setEstado("RS");
 		cliente.setNumero(10);
 		cliente.setTel(1199999999L);
 		
@@ -63,9 +63,9 @@ public class ClienteServiceTest {
 	
 	@Test
 	public void alterarCliente() throws TipoChaveNaoEncontradaException, DAOException {
-		cliente.setNome("Rodrigo Pires");
+		cliente.setNome("Arthur Ferreira");
 		clienteService.alterar(cliente);
 		
-		Assert.assertEquals("Rodrigo Pires", cliente.getNome());
+		Assert.assertEquals("Arthur Ferreira", cliente.getNome());
 	}
 }

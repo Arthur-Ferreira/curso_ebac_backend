@@ -13,7 +13,7 @@ import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
-import br.com.arthurferreira.dao.Persistente;
+import main.java.br.com.arthurferreira.dao.Persistente;
 
 /**
  * @author arthur.ferreira

@@ -14,16 +14,16 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-import anotacao.ColunaTabela;
-import anotacao.Tabela;
-import anotacao.TipoChave;
-import br.com.arthurferreira.dao.Persistente;
-import br.com.arthurferreira.dao.generic.jdbc.ConnectionFactory;
-import br.com.arthurferreira.exceptions.DAOException;
-import br.com.arthurferreira.exceptions.MaisDeUmRegistroException;
-import br.com.arthurferreira.exceptions.TableException;
-import br.com.arthurferreira.exceptions.TipoChaveNaoEncontradaException;
-import br.com.arthurferreira.exceptions.TipoElementoNaoConhecidoException;
+import main.java.anotacao.ColunaTabela;
+import main.java.anotacao.Tabela;
+import main.java.anotacao.TipoChave;
+import main.java.br.com.arthurferreira.dao.Persistente;
+import main.java.br.com.arthurferreira.dao.generic.jdbc.ConnectionFactory;
+import main.java.br.com.arthurferreira.exceptions.DAOException;
+import main.java.br.com.arthurferreira.exceptions.MaisDeUmRegistroException;
+import main.java.br.com.arthurferreira.exceptions.TableException;
+import main.java.br.com.arthurferreira.exceptions.TipoChaveNaoEncontradaException;
+import main.java.br.com.arthurferreira.exceptions.TipoElementoNaoConhecidoException;
 
 /**
  * @author arthur.ferreira

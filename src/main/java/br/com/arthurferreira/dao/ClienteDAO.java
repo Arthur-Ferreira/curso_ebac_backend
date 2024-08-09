@@ -6,8 +6,8 @@ package main.java.br.com.arthurferreira.dao;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-import br.com.arthurferreira.dao.generic.GenericDAO;
-import br.com.arthurferreira.domain.Cliente;
+import main.java.br.com.arthurferreira.dao.generic.GenericDAO;
+import main.java.br.com.arthurferreira.domain.Cliente;
 
 /**
  * @author arthur.ferreira
@@ -71,12 +71,12 @@ public class ClienteDAO extends GenericDAO<Cliente, Long> implements IClienteDAO
 	protected String getQueryAtualizacao() {
 		StringBuilder sb = new StringBuilder();
 		sb.append("UPDATE TB_CLIENTE ");
-		sb.append("SET NOME = ?,");
+		sb.append("SET NOME = ?, ");
 		sb.append("TEL = ?,");
-		sb.append("ENDERECO = ?,");
-		sb.append("NUMERO = ?,");
-		sb.append("CIDADE = ?,");
-		sb.append("ESTADO = ?");
+		sb.append("ENDERECO = ?, ");
+		sb.append("NUMERO = ?, ");
+		sb.append("CIDADE = ?, ");
+		sb.append("ESTADO = ? ");
 		sb.append("WHERE CPF = ? ");
 		return sb.toString();
 	}

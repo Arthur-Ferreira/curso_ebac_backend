@@ -2,8 +2,9 @@ package test.java.br.com.arthurferreira.dao;
 
 import java.util.Collection;
 
-import br.com.arthurferreira.domain.Cliente;
-import br.com.arthurferreira.exceptions.TipoChaveNaoEncontradaException;
+import main.java.br.com.arthurferreira.dao.IClienteDAO;
+import main.java.br.com.arthurferreira.domain.Cliente;
+import main.java.br.com.arthurferreira.exceptions.TipoChaveNaoEncontradaException;
 
 public class ClienteDaoMock implements IClienteDAO {
 

@@ -3,9 +3,9 @@
  */
 package main.java.br.com.arthurferreira.services;
 
-import br.com.arthurferreira.dao.IProdutoDAO;
-import br.com.arthurferreira.domain.Produto;
-import br.com.arthurferreira.services.generic.GenericService;
+import main.java.br.com.arthurferreira.dao.IProdutoDAO;
+import main.java.br.com.arthurferreira.domain.Produto;
+import main.java.br.com.arthurferreira.services.generic.GenericService;
 
 /**
  * @author arthur.ferreira

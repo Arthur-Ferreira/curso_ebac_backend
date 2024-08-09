@@ -24,7 +24,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
-import br.com.arthurferreira.dao.Persistente;
+import main.java.br.com.arthurferreira.dao.Persistente;
 
 /**
  * @author arthur.ferreira
@@ -64,7 +64,7 @@ public class VendaJpa implements Persistente {
 	
 	/*
 	 * OBS: Não é uma boa prática utiliar FetchType.EAGER pois ele sempre irá trazer todos os objetos da collection
-	 * mesmo sem precisar utilizar. Fazer um método específico para buscar tudo e utilizar quando precisar
+	 * mesmo sem precisar utilizar. Fazer um método eRSecífico para buscar tudo e utilizar quando precisar
 	 * 
 	 * @see IVendaJpaDAO consultarComCollection
 	 */
@@ -147,7 +147,7 @@ public class VendaJpa implements Persistente {
 		}
 	}
 	
-	public void removerTodosProdutos() {
+	public void removerTodoRSrodutos() {
 		validarStatus();
 		produtos.clear();
 		valorTotal = BigDecimal.ZERO;

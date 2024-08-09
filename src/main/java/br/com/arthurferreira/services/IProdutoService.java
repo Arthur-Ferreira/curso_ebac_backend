@@ -3,8 +3,8 @@
  */
 package main.java.br.com.arthurferreira.services;
 
-import br.com.arthurferreira.domain.Produto;
-import br.com.arthurferreira.services.generic.IGenericService;
+import main.java.br.com.arthurferreira.domain.Produto;
+import main.java.br.com.arthurferreira.services.generic.IGenericService;
 
 /**
  * @author arthur.ferreira

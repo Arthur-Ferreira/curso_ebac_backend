@@ -3,8 +3,8 @@
  */
 package main.java.br.com.arthurferreira.dao.jpa;
 
-import br.com.arthurferreira.dao.generic.jpa.IGenericJapDAO;
-import br.com.arthurferreira.domain.jpa.ClienteJpa;
+import main.java.br.com.arthurferreira.dao.generic.jpa.IGenericJapDAO;
+import main.java.br.com.arthurferreira.domain.jpa.ClienteJpa;
 
 /**
  * @author arthur.ferreira

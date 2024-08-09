@@ -9,10 +9,10 @@ import java.util.HashSet;
 import java.util.Optional;
 import java.util.Set;
 
-import anotacao.ColunaTabela;
-import anotacao.Tabela;
-import anotacao.TipoChave;
-import br.com.arthurferreira.dao.Persistente;
+import main.java.anotacao.ColunaTabela;
+import main.java.anotacao.Tabela;
+import main.java.anotacao.TipoChave;
+import main.java.br.com.arthurferreira.dao.Persistente;
 
 /**
  * @author arthur.ferreira
@@ -121,7 +121,7 @@ public class Venda implements Persistente {
 		}
 	}
 	
-	public void removerTodosProdutos() {
+	public void removerTodoRSrodutos() {
 		validarStatus();
 		produtos.clear();
 		valorTotal = BigDecimal.ZERO;

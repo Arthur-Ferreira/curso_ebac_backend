@@ -14,13 +14,13 @@ import org.junit.After;
 import org.junit.Assert;
 import org.junit.Test;
 
-import br.com.arthurferreira.dao.IProdutoDAO;
-import br.com.arthurferreira.dao.ProdutoDAO;
-import br.com.arthurferreira.domain.Produto;
-import br.com.arthurferreira.exceptions.DAOException;
-import br.com.arthurferreira.exceptions.MaisDeUmRegistroException;
-import br.com.arthurferreira.exceptions.TableException;
-import br.com.arthurferreira.exceptions.TipoChaveNaoEncontradaException;
+import main.java.br.com.arthurferreira.dao.IProdutoDAO;
+import main.java.br.com.arthurferreira.dao.ProdutoDAO;
+import main.java.br.com.arthurferreira.domain.Produto;
+import main.java.br.com.arthurferreira.exceptions.DAOException;
+import main.java.br.com.arthurferreira.exceptions.MaisDeUmRegistroException;
+import main.java.br.com.arthurferreira.exceptions.TableException;
+import main.java.br.com.arthurferreira.exceptions.TipoChaveNaoEncontradaException;
 
 /**
  * @author arthur.ferreira
@@ -89,11 +89,11 @@ public class ProdutoDAOTest {
 	@Test
 	public void alterarCliente() throws TipoChaveNaoEncontradaException, DAOException, MaisDeUmRegistroException, TableException {
 		Produto produto = criarProduto("A4");
-		produto.setNome("Rodrigo Pires");
+		produto.setNome("Arthur Ferreira");
 		produtoDao.alterar(produto);
 		Produto produtoBD = this.produtoDao.consultar(produto.getCodigo());
 		assertNotNull(produtoBD);
-		Assert.assertEquals("Rodrigo Pires", produtoBD.getNome());
+		Assert.assertEquals("Arthur Ferreira", produtoBD.getNome());
 		
 		excluir(produto.getCodigo());
 		Produto produtoBD1 = this.produtoDao.consultar(produto.getCodigo());

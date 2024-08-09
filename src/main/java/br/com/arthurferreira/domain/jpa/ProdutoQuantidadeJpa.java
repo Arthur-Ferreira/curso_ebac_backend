@@ -31,6 +31,9 @@ public class ProdutoQuantidadeJpa {
 	private Long id;
 
 	@ManyToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "id_produto_fk",
+			foreignKey = @ForeignKey(name = "fk_prod_qtd_produto"),
+			referencedColumnName = "id", nullable = false)
 	private ProdutoJpa produto;
 	
 	@Column(name = "quantidade", nullable = false)
@@ -95,8 +98,7 @@ public class ProdutoQuantidadeJpa {
 	public void adicionar(Integer quantidade) {
 		this.quantidade += quantidade;
 		BigDecimal novoValor = this.produto.getValor().multiply(BigDecimal.valueOf(quantidade));
-		BigDecimal novoTotal = this.valorTotal.add(novoValor);
-		this.valorTotal = novoTotal;
+		this.valorTotal = this.valorTotal.add(novoValor);
 	}
 	
 	public void remover(Integer quantidade) {

@@ -5,8 +5,8 @@ package main.java.br.com.arthurferreira.domain;
 
 import java.math.BigDecimal;
 
-import anotacao.ColunaTabela;
-import anotacao.Tabela;
+import main.java.anotacao.ColunaTabela;
+import main.java.anotacao.Tabela;
 
 /**
  * @author arthur.ferreira
@@ -18,7 +18,7 @@ public class ProdutoQuantidade {
 	@ColunaTabela(dbName = "id", setJavaName = "setId")
 	private Long id;
 
-	//@ColunaTabela(dbName = "id", setJavaName = "setId")
+	@ColunaTabela(dbName = "id_produto_fk", setJavaName = "setProduto")
 	private Produto produto;
 	
 	@ColunaTabela(dbName = "quantidade", setJavaName = "setQuantidade")

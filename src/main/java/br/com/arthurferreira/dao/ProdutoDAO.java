@@ -6,8 +6,8 @@ package main.java.br.com.arthurferreira.dao;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-import br.com.arthurferreira.dao.generic.GenericDAO;
-import br.com.arthurferreira.domain.Produto;
+import main.java.br.com.arthurferreira.dao.generic.GenericDAO;
+import main.java.br.com.arthurferreira.domain.Produto;
 
 /**
  * @author arthur.ferreira
@@ -63,10 +63,10 @@ public class ProdutoDAO extends GenericDAO<Produto, String> implements IProdutoD
 	protected String getQueryAtualizacao() {
 		StringBuilder sb = new StringBuilder();
 		sb.append("UPDATE TB_PRODUTO ");
-		sb.append("SET CODIGO = ?,");
-		sb.append("NOME = ?,");
-		sb.append("DESCRICAO = ?,");
-		sb.append("VALOR = ?");
+		sb.append("SET CODIGO = ?, ");
+		sb.append("NOME = ?, ");
+		sb.append("DESCRICAO = ?, ");
+		sb.append("VALOR = ? ");
 		sb.append("WHERE CODIGO = ? ");
 		return sb.toString();
 	}

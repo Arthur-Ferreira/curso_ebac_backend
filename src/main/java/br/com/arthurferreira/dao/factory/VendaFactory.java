@@ -6,9 +6,9 @@ package main.java.br.com.arthurferreira.dao.factory;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import br.com.arthurferreira.domain.Cliente;
-import br.com.arthurferreira.domain.Venda;
-import br.com.arthurferreira.domain.Venda.Status;
+import main.java.br.com.arthurferreira.domain.Cliente;
+import main.java.br.com.arthurferreira.domain.Venda;
+import main.java.br.com.arthurferreira.domain.Venda.Status;
 
 /**
  * @author arthur.ferreira

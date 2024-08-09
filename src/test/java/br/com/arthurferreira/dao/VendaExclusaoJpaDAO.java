@@ -3,11 +3,11 @@
  */
 package test.java.br.com.arthurferreira.dao;
 
-import br.com.arthurferreira.dao.generic.jpa.GenericJpaDAO;
-import br.com.arthurferreira.dao.jpa.IVendaJpaDAO;
-import br.com.arthurferreira.domain.jpa.VendaJpa;
-import br.com.arthurferreira.exceptions.DAOException;
-import br.com.arthurferreira.exceptions.TipoChaveNaoEncontradaException;
+import main.java.br.com.arthurferreira.dao.generic.jpa.GenericJpaDAO;
+import main.java.br.com.arthurferreira.dao.jpa.IVendaJpaDAO;
+import main.java.br.com.arthurferreira.domain.jpa.VendaJpa;
+import main.java.br.com.arthurferreira.exceptions.DAOException;
+import main.java.br.com.arthurferreira.exceptions.TipoChaveNaoEncontradaException;
 
 /**
  * @author arthur.ferreira

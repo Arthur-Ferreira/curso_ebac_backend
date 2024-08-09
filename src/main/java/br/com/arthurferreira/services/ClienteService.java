@@ -3,12 +3,12 @@
  */
 package main.java.br.com.arthurferreira.services;
 
-import br.com.arthurferreira.dao.IClienteDAO;
-import br.com.arthurferreira.domain.Cliente;
-import br.com.arthurferreira.exceptions.DAOException;
-import br.com.arthurferreira.exceptions.MaisDeUmRegistroException;
-import br.com.arthurferreira.exceptions.TableException;
-import br.com.arthurferreira.services.generic.GenericService;
+import main.java.br.com.arthurferreira.dao.IClienteDAO;
+import main.java.br.com.arthurferreira.domain.Cliente;
+import main.java.br.com.arthurferreira.exceptions.DAOException;
+import main.java.br.com.arthurferreira.exceptions.MaisDeUmRegistroException;
+import main.java.br.com.arthurferreira.exceptions.TableException;
+import main.java.br.com.arthurferreira.services.generic.GenericService;
 
 /**
  * @author arthur.ferreira

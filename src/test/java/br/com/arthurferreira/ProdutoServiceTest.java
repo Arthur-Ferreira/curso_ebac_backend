@@ -9,13 +9,13 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import br.com.arthurferreira.dao.IProdutoDAO;
-import br.com.arthurferreira.dao.ProdutoDaoMock;
-import br.com.arthurferreira.domain.Produto;
-import br.com.arthurferreira.exceptions.DAOException;
-import br.com.arthurferreira.exceptions.TipoChaveNaoEncontradaException;
-import br.com.arthurferreira.services.IProdutoService;
-import br.com.arthurferreira.services.ProdutoService;
+import main.java.br.com.arthurferreira.dao.IProdutoDAO;
+import test.java.br.com.arthurferreira.dao.ProdutoDaoMock;
+import main.java.br.com.arthurferreira.domain.Produto;
+import main.java.br.com.arthurferreira.exceptions.DAOException;
+import main.java.br.com.arthurferreira.exceptions.TipoChaveNaoEncontradaException;
+import main.java.br.com.arthurferreira.services.IProdutoService;
+import main.java.br.com.arthurferreira.services.ProdutoService;
 
 /**
  * @author arthur.ferreira
@@ -60,9 +60,9 @@ public class ProdutoServiceTest {
 	
 	@Test
 	public void alterarCliente() throws TipoChaveNaoEncontradaException, DAOException {
-		produto.setNome("Rodrigo Pires");
+		produto.setNome("Arthur Ferreira");
 		produtoService.alterar(produto);
 		
-		Assert.assertEquals("Rodrigo Pires", produto.getNome());
+		Assert.assertEquals("Arthur Ferreira", produto.getNome());
 	}
 }

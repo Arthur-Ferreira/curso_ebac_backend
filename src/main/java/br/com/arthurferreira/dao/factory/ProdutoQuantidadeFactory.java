@@ -3,11 +3,11 @@
  */
 package main.java.br.com.arthurferreira.dao.factory;
 
+import main.java.br.com.arthurferreira.domain.Produto;
+import main.java.br.com.arthurferreira.domain.ProdutoQuantidade;
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
-
-import br.com.arthurferreira.domain.Produto;
-import br.com.arthurferreira.domain.ProdutoQuantidade;
 
 /**
  * @author arthur.ferreira

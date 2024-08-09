@@ -15,16 +15,16 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import br.com.arthurferreira.dao.factory.ProdutoQuantidadeFactory;
-import br.com.arthurferreira.dao.factory.VendaFactory;
-import br.com.arthurferreira.dao.generic.GenericDAO;
-import br.com.arthurferreira.domain.ProdutoQuantidade;
-import br.com.arthurferreira.domain.Venda;
-import br.com.arthurferreira.domain.Venda.Status;
-import br.com.arthurferreira.exceptions.DAOException;
-import br.com.arthurferreira.exceptions.MaisDeUmRegistroException;
-import br.com.arthurferreira.exceptions.TableException;
-import br.com.arthurferreira.exceptions.TipoChaveNaoEncontradaException;
+import main.java.br.com.arthurferreira.dao.factory.ProdutoQuantidadeFactory;
+import main.java.br.com.arthurferreira.dao.factory.VendaFactory;
+import main.java.br.com.arthurferreira.dao.generic.GenericDAO;
+import main.java.br.com.arthurferreira.domain.ProdutoQuantidade;
+import main.java.br.com.arthurferreira.domain.Venda;
+import main.java.br.com.arthurferreira.domain.Venda.Status;
+import main.java.br.com.arthurferreira.exceptions.DAOException;
+import main.java.br.com.arthurferreira.exceptions.MaisDeUmRegistroException;
+import main.java.br.com.arthurferreira.exceptions.TableException;
+import main.java.br.com.arthurferreira.exceptions.TipoChaveNaoEncontradaException;
 
 /**
  * @author arthur.ferreira
@@ -171,7 +171,7 @@ public class VendaDAO extends GenericDAO<Venda, String> implements IVendaDAO {
 	private void buscarAssociacaoVendaProdutos(Connection connection, Venda venda)
 			throws DAOException {
 		PreparedStatement stmProd = null;
-		ResultSet rsProd = null;
+		ResultSet rRSrod = null;
 		try {
 			StringBuilder sbProd = new StringBuilder();
 		    sbProd.append("SELECT PQ.ID, PQ.QUANTIDADE, PQ.VALOR_TOTAL, ");
@@ -181,10 +181,10 @@ public class VendaDAO extends GenericDAO<Venda, String> implements IVendaDAO {
 		    sbProd.append("WHERE PQ.ID_VENDA_FK = ?");
 		    stmProd = connection.prepareStatement(sbProd.toString());
 		    stmProd.setLong(1, venda.getId());
-		    rsProd = stmProd.executeQuery();
+		    rRSrod = stmProd.executeQuery();
 		    Set<ProdutoQuantidade> produtos = new HashSet<>();
-		    while(rsProd.next()) {
-		    	ProdutoQuantidade prodQ = ProdutoQuantidadeFactory.convert(rsProd);
+		    while(rRSrod.next()) {
+		    	ProdutoQuantidade prodQ = ProdutoQuantidadeFactory.convert(rRSrod);
 		    	produtos.add(prodQ);
 		    }
 		    venda.setProdutos(produtos);
@@ -192,7 +192,7 @@ public class VendaDAO extends GenericDAO<Venda, String> implements IVendaDAO {
 		} catch (SQLException e) {
 			throw new DAOException("ERRO CONSULTANDO OBJETO ", e);
 		} finally {
-			closeConnection(connection, stmProd, rsProd);
+			closeConnection(connection, stmProd, rRSrod);
 		}
 	}
 	
@@ -267,7 +267,7 @@ public class VendaDAO extends GenericDAO<Venda, String> implements IVendaDAO {
 		StringBuilder sb = new StringBuilder();
 		sb.append("INSERT INTO TB_PRODUTO_QUANTIDADE ");
 		sb.append("(ID, ID_PRODUTO_FK, ID_VENDA_FK, QUANTIDADE, VALOR_TOTAL)");
-		sb.append("VALUES (nextval('sq_produto_quantidade'),?,?,?,?)");
+		sb.append("VALUES (nextval('sq_prod_qtd'),?,?,?,?)");
 		return sb.toString();
 	}
 	

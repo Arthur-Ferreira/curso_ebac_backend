@@ -12,13 +12,13 @@ import org.junit.After;
 import org.junit.Assert;
 import org.junit.Test;
 
-import br.com.arthurferreira.dao.jpa.ClienteJpaDAO;
-import br.com.arthurferreira.dao.jpa.IClienteJpaDAO;
-import br.com.arthurferreira.domain.jpa.ClienteJpa;
-import br.com.arthurferreira.exceptions.DAOException;
-import br.com.arthurferreira.exceptions.MaisDeUmRegistroException;
-import br.com.arthurferreira.exceptions.TableException;
-import br.com.arthurferreira.exceptions.TipoChaveNaoEncontradaException;
+import main.java.br.com.arthurferreira.dao.jpa.ClienteJpaDAO;
+import main.java.br.com.arthurferreira.dao.jpa.IClienteJpaDAO;
+import main.java.br.com.arthurferreira.domain.jpa.ClienteJpa;
+import main.java.br.com.arthurferreira.exceptions.DAOException;
+import main.java.br.com.arthurferreira.exceptions.MaisDeUmRegistroException;
+import main.java.br.com.arthurferreira.exceptions.TableException;
+import main.java.br.com.arthurferreira.exceptions.TipoChaveNaoEncontradaException;
 
 /**
  * @author arthur.ferreira
@@ -96,12 +96,12 @@ public class ClienteJpaDaoTest {
 		ClienteJpa clienteConsultado = clienteDao.consultar(cliente.getId());
 		Assert.assertNotNull(clienteConsultado);
 		
-		clienteConsultado.setNome("Rodrigo Pires");
+		clienteConsultado.setNome("Arthur Ferreira");
 		clienteDao.alterar(clienteConsultado);
 		
 		ClienteJpa clienteAlterado = clienteDao.consultar(clienteConsultado.getId());
 		Assert.assertNotNull(clienteAlterado);
-		Assert.assertEquals("Rodrigo Pires", clienteAlterado.getNome());
+		Assert.assertEquals("Arthur Ferreira", clienteAlterado.getNome());
 		
 		clienteDao.excluir(cliente);
 		clienteConsultado = clienteDao.consultar(clienteAlterado.getId());
@@ -139,10 +139,10 @@ public class ClienteJpaDaoTest {
 	private ClienteJpa criarCliente() {
 		ClienteJpa cliente = new ClienteJpa();
 		cliente.setCpf(rd.nextLong());
-		cliente.setNome("Rodrigo");
-		cliente.setCidade("São Paulo");
+		cliente.setNome("Arthur");
+		cliente.setCidade("Porto Alegre");
 		cliente.setEnd("End");
-		cliente.setEstado("SP");
+		cliente.setEstado("RS");
 		cliente.setNumero(10);
 		cliente.setTel(1199999999L);
 		return cliente;
