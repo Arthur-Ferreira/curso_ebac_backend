@@ -1,0 +1,19 @@
+/**
+ *
+ */
+package br.com.arthurferreira.service;
+
+import br.com.arthurferreira.dao.generic.IGenericDAO;
+import br.com.arthurferreira.domain.Venda;
+import br.com.arthurferreira.exceptions.DAOException;
+import br.com.arthurferreira.exceptions.TipoChaveNaoEncontradaException;
+
+public interface IVendaService extends IGenericDAO<Venda, Long> {
+
+  public void finalizarVenda(Venda venda) throws TipoChaveNaoEncontradaException, DAOException;
+
+  public void cancelarVenda(Venda venda) throws TipoChaveNaoEncontradaException, DAOException;
+
+  public Venda consultarComCollection(Long id);
+
+}
