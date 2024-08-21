@@ -20,7 +20,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name = "tb_produto", indexes = {
+@Table(name = "tb_product", indexes = {
     @Index(name = "idx_code", columnList = "code", unique = true)
 })
 @Getter

@@ -1,4 +1,4 @@
-package com.br.arthurferreira.productservices;
+package com.br.arthurferreira.clientservices;
 
 import com.br.arthurferreira.controller.ProductController;
 import com.br.arthurferreira.model.ProductModel;
